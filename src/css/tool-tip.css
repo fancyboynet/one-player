@@ -1,0 +1,18 @@
+.one-player--tool-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(27, 29, 29, 0.9);
+  color: white;
+  padding: 0 10px;
+  white-space: nowrap;
+  transform: translate(-50%, -100%);
+  border-radius: 2px;
+  min-width: 42px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  box-sizing: border-box;
+  display: none;
+}

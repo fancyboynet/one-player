@@ -1,0 +1,12 @@
+<div class="one-player">
+    {{include './live.art'}}
+    {{include './tool-tip.art'}}
+    {{include './context.art'}}
+    {{include './cover.art'}}
+    {{include './bezel.art'}}
+    {{include './dan-mu.art'}}
+    {{include './video.art'}}
+    {{include './control-bar.art'}}
+    {{include './context-menu'}}
+    {{include './stats'}}
+</div>

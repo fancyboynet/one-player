@@ -1,0 +1,52 @@
+{
+  "name": "one-player",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rubik build --lib",
+    "start": "rubik serve --lib",
+    "lint": "rubik lint --fix",
+    "stylelint": "rubik stylelint --fix"
+  },
+  "keywords": [],
+  "author": "Fancy <fancyboynet@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "art-template-loader": "^1.4.3",
+    "hls.js": "^0.13.0",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "rubik-cli": "latest"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-merge": "rubik check-package",
+      "post-checkout": "rubik check-package",
+      "commit-msg": "rubik commitlint"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,vue}": [
+      "rubik lint --fix",
+      "git add"
+    ],
+    "src/**/*.{css,scss,sass,less,vue}": [
+      "rubik stylelint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "custom-event-polyfill": "^1.0.7"
+  }
+}

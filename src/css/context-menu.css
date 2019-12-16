@@ -1,0 +1,24 @@
+.one-player--context-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(27, 29, 29, 0.9);
+  color: white;
+  white-space: nowrap;
+  border-radius: 2px;
+  min-width: 200px;
+  box-sizing: border-box;
+}
+.one-player--context-menu:focus {
+  outline: 0;
+}
+.one-player--context-menu > div {
+  height: 35px;
+  line-height: 35px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+.one-player--context-menu > div:hover {
+  background: rgba(97, 97, 97, 0.2);
+}

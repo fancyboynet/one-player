@@ -1,0 +1,90 @@
+.one-player--bezel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  font-size: 14px;
+}
+.one-player--bezel,
+.one-player--bezel-content {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.one-player--loading,
+.one-player--bezel-play-status {
+  width: 60px;
+  height: 60px;
+  cursor: default;
+}
+@keyframes one-player--bezel-loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.one-player--loading {
+  display: none;
+  border-radius: 50%;
+  border: 5px solid #000;
+  border-color: #fff transparent #fff transparent;
+  animation: one-player--bezel-loading 1s linear infinite;
+}
+.one-player--bezel .one-player--bezel-play-status {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 100%;
+  opacity: 0;
+}
+@keyframes one-player--bezel-fade-out {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+.one-player--message-tip {
+  display: none;
+}
+.one-player--message-tip strong {
+  color: #64e9f0;
+  margin: 0 0.5em;
+  cursor: pointer;
+}
+.one-player--bezel-show-message {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: none;
+  background: rgba(0, 0, 0, 0.2);
+}
+.one-player--bezel-show-message,
+.one-player--bezel-show-loading,
+.one-player--bezel-show-play,
+.one-player--bezel-show-loading .one-player--bezel-content,
+.one-player--bezel-show-message .one-player--bezel-content {
+  display: flex;
+}
+.one-player--bezel-show-loading .one-player--loading {
+  display: block;
+}
+.one-player--bezel-show-message .one-player--message-tip {
+  display: block;
+  margin: 10px 0 0;
+}
+.one-player--bezel-show-play .one-player--bezel-play-status {
+  animation: one-player--bezel-fade-out 1s;
+}

@@ -1,0 +1,29 @@
+@media only screen and (max-width: 768px) {
+  .one-player--control {
+    padding: 0;
+  }
+  .one-player--control-item,
+  .one-player--volume-progress {
+    margin: 0 7px;
+  }
+  .one-player--control-item-volume {
+    margin-right: 0;
+  }
+  .one-player--control-item-time {
+    margin-left: 0;
+  }
+  .one-player--control-item-comment {
+    display: none;
+  }
+  .one-player--quality-list {
+    min-width: 45px;
+  }
+  .one-player--quality-list li {
+    padding: 0 5px;
+  }
+  .one-player--loading,
+  .one-player--bezel-play-status {
+    width: 48px;
+    height: 48px;
+  }
+}

@@ -1,0 +1,104 @@
+.one-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+  background: black;
+  color: white;
+  font-size: 12px;
+  -ms-user-select: none; /* autoprefixer 不起作用 */
+  user-select: none;
+}
+.one-player-hide {
+  display: none !important;
+}
+.one-player-no-cursor * {
+  cursor: none;
+}
+.one-player * {
+  box-sizing: content-box;
+}
+.one-player-toast {
+  position: absolute;
+  height: 30px;
+  font-size: 13px;
+  line-height: 30px;
+  white-space: nowrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 37px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 0.2em;
+  z-index: 1000;
+  animation: one-player--fade-out forwards;
+}
+@keyframes one-player--fade-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.one-player-toast-hide {
+  opacity: 0;
+}
+.one-player .one-player-box-sizing-border-box {
+  box-sizing: border-box;
+}
+
+.one-player ul,
+.one-player li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.one-player button:focus {
+  outline: 0;
+}
+.one-player video {
+  width: 100%;
+  height: 100%;
+}
+.one-player--video-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.one-player--icon {
+  width: 18px;
+  height: 18px;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.one-player--icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.one-player--icon svg * {
+  fill: rgba(255, 255, 255, 1);
+}
+
+.one-player--dan-mu-button {
+  width: 21px;
+  height: 21px;
+}
+
+.one-player--dan-mu-button .danmu-animation-mover {
+  transition: transform 0.3s;
+}

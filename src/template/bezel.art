@@ -1,0 +1,9 @@
+<div class="one-player--bezel">
+    <div class="one-player--bezel-content">
+        <div class="one-player--loading"></div>
+        <div class="one-player--message-tip"><span></span><strong></strong></div>
+    </div>
+    <div class="one-player--icon one-player--bezel-play-status">
+        {{@ icon.play }}
+    </div>
+</div>

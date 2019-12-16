@@ -1,0 +1,39 @@
+.one-player--stats {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(27, 29, 29, 0.8);
+  color: white;
+  padding: 5px;
+  border-radius: 2px;
+  min-width: 400px;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+.one-player--stats > button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+.one-player--stats div {
+  display: flex;
+  align-items: center;
+}
+.one-player--stats-label {
+  text-align: right;
+  min-width: 30%;
+  margin: 0 0.5em 0 0;
+}
+.one-player--stats-speed-chart svg {
+  height: 10px;
+  stroke: white;
+  stroke-width: 2;
+}
+.one-player--stats-speed {
+  margin-left: auto;
+}

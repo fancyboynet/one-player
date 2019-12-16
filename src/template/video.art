@@ -1,0 +1,7 @@
+<video
+{{if autoPlay}} autoplay {{/if}}
+{{if muted}} muted {{/if}}
+preload="{{ preload }}"
+{{if playsInline}} webkit-playsinline playsinline {{/if}}
+></video>
+<div class="one-player--video-mask"></div>

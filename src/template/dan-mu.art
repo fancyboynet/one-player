@@ -1,0 +1,3 @@
+{{if danMu.enable}}
+<div class="one-player--dan-mu" style="top:{{ danMu.topSpace }}px;"></div>
+{{/if}}

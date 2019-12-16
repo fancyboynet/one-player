@@ -1,0 +1,32 @@
+<div class="one-player--stats one-player-hide">
+    <button title="close" class="one-player--stats-close">[x]</button>
+    <div>
+        <span class="one-player--stats-label">Viewport</span>
+        <span class="one-player--stats-viewport"></span>
+    </div>
+    <div>
+        <span class="one-player--stats-label">Resolution</span>
+        <span class="one-player--stats-resolution"></span>
+    </div>
+    <div>
+        <span class="one-player--stats-label">Format</span>
+        <span class="one-player--stats-format"></span>
+    </div>
+    <div>
+        <span class="one-player--stats-label">Connection Speed</span>
+        <span class="one-player--stats-speed-chart">
+            <svg preserveAspectRatio="xMinYMid meet">
+                <polyline />
+            </svg>
+        </span>
+        <span class="one-player--stats-speed"></span>
+    </div>
+    <div>
+        <span class="one-player--stats-label">Network Activity</span>
+        <span class="one-player--stats-network"></span>
+    </div>
+    <div>
+        <span class="one-player--stats-label">Dropped Frames</span>
+        <span class="one-player--stats-dropped-frames"></span>
+    </div>
+</div>

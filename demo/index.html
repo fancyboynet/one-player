@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>one-player</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #wrap, .debug {
+            display: flex;
+        }
+        .debug > div {
+            flex: 1;
+        }
+
+        #player-wrap {
+            flex: 2;
+        }
+
+        #info-wrap {
+            flex: 1;
+            padding: 0 10px;
+            overflow-y: auto;
+          max-height: 500px;
+        }
+        #version{
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            #wrap {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="player-wrap">
+        <div id="player"></div>
+    </div>
+    <div id="info-wrap">
+        <p>Version:</p>
+        <div id="version"></div>
+        <p>Memory:</p>
+        <div id="memory"></div>
+        <p>Hls: <span id="hls-version"></span></p>
+        <button type="button" id="is-support-hls-button">是否支持hls</button>
+        <button type="button" id="hls-recover-media-error-button">recoverMediaError</button>
+        <p>播放器:</p>
+        <input type="text" style="width: 90%;" placeholder="加载指定视频" id="load-custom-input" value="http://10.0.2.63:8000/hls/live/test/test.m3u8">
+        <button type="button" id="load-custom-button">加载</button>
+        <button type="button" id="load-custom-live-button">直播加载</button>
+        <br />
+        <br />
+        <button type="button" id="play-button">play</button>
+        <button type="button" id="pause-button">pause</button>
+        <button type="button" id="load-mp4-button">切换mp4</button>
+        <button type="button" id="load-m3u8-button">切换简单m3u8</button>
+        <button type="button" id="load-mutiple-m3u8-button">切换复杂m3u8</button>
+        <button type="button" id="load-reduce-quality-button">降低清晰度</button>
+        <span style="display: inline-block">
+            <input type="number" style="width: 5em;" placeholder="清晰度索引" id="load-select-quality-input" value="3">
+        </span>
+        <button type="button" id="load-select-quality-button">选择清晰度</button>
+        <button type="button" id="is-last-quality-button">isLastQuality</button>
+        <button type="button" id="destroy-button">destroy</button>
+        <button type="button" id="toast-button">toast</button>
+        <p>弹幕:</p>
+        队列大小:<input type="text" id="dan-mu-limit" value="100" />
+        <br />
+        最大行数:<input type="text" id="dan-mu-maxRows" value="7" />
+        <br />
+        顶部间距:<input type="text" id="dan-mu-topSpace" value="10" />
+        <br />
+        单行高度:<input type="text" id="dan-mu-rowHeight" value="36" />
+        <br />
+        初始弹幕间距(px):<input type="text" id="dan-mu-initSpace" value="120" />
+        <br />
+        基本速度(px/second):<input type="text" id="dan-mu-speed" value="80" />
+        <br />
+        最小弹幕宽度(px):<input type="text" id="dan-mu-minWidth" value="10" />
+        <br />
+        加速度:<input type="text" id="dan-mu-acceleration" value="0.1" />
+        <br />
+        不覆盖:<select id="dan-mu-noCover">
+          <option value="0">否</option>
+          <option value="1" selected>是</option>
+        </select>
+        <br />
+        <input type="text" id="dan-mu-input" style="width: 70%;" placeholder="填写弹幕" value='<script type="text/javascript">javascript:window.alert(1)</script>' />
+        <button type="button" id="dan-mu-button">发送</button>
+        <button type="button" id="dan-mu-priority-button">发送优先</button>
+        <br />
+        <br />
+        <button type="button" id="dan-mu-multiple-button">发送批量弹幕</button>
+        <button type="button" id="dan-mu-auto-button">自动发送弹幕</button>
+        <button type="button" id="dan-mu-toggle-button">隐藏弹幕</button>
+        <button type="button" id="dan-mu-xss">xss</button>
+        <p>评论框:</p>
+        <button type="button" id="comment-show-button">显示</button>
+        <button type="button" id="comment-hide-button">隐藏</button>
+        <button type="button" id="comment-clear-button">清空</button>
+        <input type="text" placeholder="设置指定内容" id="comment-input" value="">
+        <button type="button" id="comment-input-button">设置</button>
+    </div>
+</div>
+<div class="debug" id="debug">
+    <div>
+        <p>Log:</p>
+        <textarea id="log" style="width: 100%;height: 150px;"></textarea>
+    </div>
+    <div>
+        <p>Events:</p>
+        <textarea id="events" style="width: 100%;height: 150px;"></textarea>
+    </div>
+    <div>
+        <p>Errors:</p>
+        <textarea id="errors" style="width: 100%;height: 150px;"></textarea>
+    </div>
+</div>
+<!--<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>-->
+</body>
+</html>

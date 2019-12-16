@@ -1,0 +1,89 @@
+<div class="one-player--control-bar">
+    {{if !live }}
+    <div class="one-player--progress">
+        <div class="one-player--progress-bg"></div>
+        <div class="one-player--progress-loaded"></div>
+        <div class="one-player--progress-hover"><i></i></div>
+        <div class="one-player--progress-play">
+            <div class="one-player--icon one-player--progress-drag">
+                {{@ icon.drag }}
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    <div class="one-player--control">
+        <div class="one-player--control-item">
+            <button class="one-player--icon one-player--play-button">
+                {{@ icon.play }}
+            </button>
+        </div>
+        <div class="one-player--control-item one-player--control-item-volume">
+            <div class="one-player--volume">
+                <button class="one-player--icon one-player--volume-button">
+                    {{@ icon.volume }}
+                </button>
+                <div class="one-player--volume-progress">
+                    <div class="one-player--volume-progress-now">
+                        <div class="one-player--icon one-player--volume-progress-drag">
+                            {{@ icon.volumeDrag }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{if !live}}
+        <div class="one-player--control-item one-player--control-item-time">
+            <span class="one-player--time">
+                <span class="one-player--current-time"></span> / <span
+                    class="one-player--total-time"></span>
+            </span>
+            <span class="one-player--countdown"></span>
+        </div>
+        {{/if}}
+        {{if comment.enable}}
+        <div class="one-player--control-item one-player--control-item-comment">
+            <div class="one-player--comment">
+                <input type="text"
+                       placeholder="{{ text.commentPlaceholder }}"
+                       {{if comment.maxLength}} maxlength="{{ comment.maxLength }}" {{/if}}
+                >
+                <i></i>
+                <button disabled>{{ text.commentButton }}</button>
+            </div>
+        </div>
+        {{/if}}
+        <div class="one-player--control-right">
+            {{if danMu.enable}}
+            <div class="one-player--control-item">
+                <button class="one-player--icon one-player--dan-mu-button">
+                    {{@ icon.danMuOn }}
+                </button>
+            </div>
+            {{/if}}
+            {{if quality && quality.length}}
+            <div class="one-player--control-item one-player--quality">
+                <div class="one-player--quality-list">
+                    <ul>
+                        {{each quality}}
+                        <li data-index="{{$index}}" {{if $index === 0}} class="one-player--quality-list-active" {{/if}}>{{$value.name}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="one-player--quality-active">{{ quality[0].name }}</div>
+            </div>
+            {{/if}}
+            <div class="one-player--control-item">
+                <button class="one-player--icon one-player--fresh-button">
+                    {{@ icon.fresh }}
+                </button>
+            </div>
+            {{if canFull}}
+            <div class="one-player--control-item">
+                <button class="one-player--icon one-player--full-button">
+                    {{@ icon.full }}
+                </button>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

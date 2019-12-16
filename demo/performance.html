@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>one-player</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        #wrap, .debug {
+            display: flex;
+        }
+        .debug > div {
+            flex: 1;
+        }
+
+        #player-wrap {
+            flex: 2;
+        }
+        @media (max-width: 768px) {
+            #wrap {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="player-wrap">
+        <div id="player"></div>
+        <p>memory: <span id="memory"></span></p>
+    </div>
+</div>
+</body>
+</html>

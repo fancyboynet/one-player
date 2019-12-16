@@ -1,0 +1,5 @@
+{{if live}}
+<div class="one-player--live">
+    <div>{{text.liveTag}}</div>
+</div>
+{{/if}}

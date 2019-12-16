@@ -1,0 +1,7 @@
+<div class="one-player--context-menu one-player-hide" tabIndex="1">
+    <div class="one-player--context-menu-version"></div>
+    <div class="one-player--context-menu-copy-url">{{ text.contextMenu.copyUrl }}</div>
+    <div class="one-player--context-menu-stats">{{ text.contextMenu.stats }}</div>
+    <div class="one-player--context-menu-pip one-player-hide">{{ text.contextMenu.pip }}</div>
+    <div class="one-player--context-menu-reset one-player-hide">{{ text.contextMenu.reset }}</div>
+</div>

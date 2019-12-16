@@ -1,0 +1,3 @@
+{{if cover}}
+<div class="one-player--cover{{if coverType }} one-player--cover-type-{{ coverType }}{{/if}}" style="background-image: url({{ cover }})"></div>
+{{/if}}
