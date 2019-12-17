@@ -15,7 +15,12 @@
     "test": "yarn lint",
     "release": "yarn test && standard-version"
   },
-  "keywords": [],
+  "keywords": [
+    "player",
+    "one player",
+    "hls",
+    "m3u8"
+  ],
   "author": "Fancy <fancyboynet@gmail.com>",
   "license": "MIT",
   "repository": {
