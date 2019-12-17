@@ -7,8 +7,9 @@
   background: black;
   color: white;
   font-size: 12px;
-  -ms-user-select: none; /* autoprefixer 不起作用 */
   user-select: none;
+  line-height: normal; /* 避免受外部行高影响 */
+  white-space: initial; /* 避免受外部影响 */
 }
 .one-player-hide {
   display: none !important;

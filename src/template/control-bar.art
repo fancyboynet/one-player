@@ -13,13 +13,13 @@
     {{/if}}
     <div class="one-player--control">
         <div class="one-player--control-item">
-            <button class="one-player--icon one-player--play-button">
+            <button type="button" class="one-player--icon one-player--play-button">
                 {{@ icon.play }}
             </button>
         </div>
         <div class="one-player--control-item one-player--control-item-volume">
             <div class="one-player--volume">
-                <button class="one-player--icon one-player--volume-button">
+                <button type="button" class="one-player--icon one-player--volume-button">
                     {{@ icon.volume }}
                 </button>
                 <div class="one-player--volume-progress">
@@ -48,14 +48,14 @@
                        {{if comment.maxLength}} maxlength="{{ comment.maxLength }}" {{/if}}
                 >
                 <i></i>
-                <button disabled>{{ text.commentButton }}</button>
+                <button type="button" disabled>{{ text.commentButton }}</button>
             </div>
         </div>
         {{/if}}
         <div class="one-player--control-right">
             {{if danMu.enable}}
             <div class="one-player--control-item">
-                <button class="one-player--icon one-player--dan-mu-button">
+                <button type="button" class="one-player--icon one-player--dan-mu-button">
                     {{@ icon.danMuOn }}
                 </button>
             </div>
@@ -73,13 +73,13 @@
             </div>
             {{/if}}
             <div class="one-player--control-item">
-                <button class="one-player--icon one-player--fresh-button">
+                <button type="button" class="one-player--icon one-player--fresh-button">
                     {{@ icon.fresh }}
                 </button>
             </div>
             {{if canFull}}
             <div class="one-player--control-item">
-                <button class="one-player--icon one-player--full-button">
+                <button type="button" class="one-player--icon one-player--full-button">
                     {{@ icon.full }}
                 </button>
             </div>

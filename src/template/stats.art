@@ -1,5 +1,5 @@
 <div class="one-player--stats one-player-hide">
-    <button title="close" class="one-player--stats-close">[x]</button>
+    <button type="button" title="close" class="one-player--stats-close">[x]</button>
     <div>
         <span class="one-player--stats-label">Viewport</span>
         <span class="one-player--stats-viewport"></span>
