@@ -33,9 +33,9 @@
   "devDependencies": {
     "art-template-loader": "^1.4.3",
     "hls.js": "^0.13.0",
-    "husky": "latest",
-    "lint-staged": "latest",
-    "rubik-cli": "latest"
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "rubik-cli": "^1.6.0"
   },
   "browserslist": [
     "> 1%",

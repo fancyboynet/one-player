@@ -1,5 +1,6 @@
 let supportsPassive = false
 try {
+  /* eslint getter-return: "off" */
   const opts = Object.defineProperty({}, 'passive', {
     get () {
       supportsPassive = true
@@ -7,7 +8,9 @@ try {
   })
   window.addEventListener('testPassive', null, opts)
   window.removeEventListener('testPassive', null, opts)
-} catch (e) {}
+} catch (e) {
+  console.error(e)
+}
 
 export function formatTime (s) {
   s = parseInt(s, 10)
@@ -197,7 +200,9 @@ export function copy (text) {
   input.select()
   try {
     document.execCommand('copy')
-  } catch (e) {}
+  } catch (e) {
+    window.alert('copy failed')
+  }
   window.document.body.removeChild(input)
 }
 
