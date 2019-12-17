@@ -53,7 +53,7 @@ player.on('pause', () => {
 ```
 
 ## Config
-完整查看[src/js/events.js](src/js/config.js)
+完整查看[src/js/config.js](src/js/config.js)
 
 ## Events
 事件监听返回的evt是一个标准的[CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent)对象
