@@ -3,6 +3,9 @@
   <b>一款基于hls.js的h5播放器</b> <a href="https://www.npmjs.com/package/one-player"><img alt="npm" src="https://img.shields.io/npm/v/one-player?color=sucess"></a>
 </p>
 
+<p align="center">
+  <img style="max-width: 100%" src="assets/screenshot.jpg" alt="">
+</p>
 
 ## Install
 ```bash

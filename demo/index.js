@@ -61,10 +61,6 @@ function createPlayer (opt) {
       {
         name: '1080',
         url: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8'
-      },
-      {
-        name: '720',
-        url: 'https://video-dev.github.io/streams/x36xhzz/url_0/193039199_mp4_h264_aac_hd_7.m3u8'
       }
     ],
     beforeQualityChange (index) {
@@ -105,6 +101,9 @@ function createPlayer (opt) {
     document.querySelector('#dan-mu-toggle-button').textContent = evt.detail.visible ? '隐藏弹幕' : '显示弹幕'
   })
   player.on(OnePlayer.EVENTS.VIDEO_SIZE_CHANGE, (evt) => {
+    if (!evt.detail.width) {
+      return
+    }
     container.style.height = evt.detail.width * 9 / 16 + 'px'
   })
   player.on(OnePlayer.EVENTS.COMMENT, (evt) => {

@@ -4,10 +4,15 @@ const webpack = require('webpack')
 const pkgJson = require('./package')
 const isDevMode = process.env.NODE_ENV !== 'production'
 const entry = isDevMode ? {
+  'demo': './demo/index.js',
   'performance': './demo/performance.js',
   'plugin': './demo/plugin.js'
 } : {}
 const plugins = isDevMode ? [
+  new HtmlWebpackPlugin({
+    template: path.resolve(__dirname, 'demo/index.html'),
+    chunks: ['demo']
+  }),
   new HtmlWebpackPlugin({
     filename: 'performance.html',
     template: path.resolve(__dirname, 'demo/performance.html'),
