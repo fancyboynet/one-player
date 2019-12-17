@@ -4,6 +4,8 @@ import { PlayerStat } from './player-stat'
 // const Hls = window.Hls
 let container = document.querySelector('#player')
 let playerStat = new PlayerStat()
+let autoSendRandomDanMuId = null
+
 playerStat.triggerPageEnter()
 const VIDEO_EVENTS = [
   'abort',
@@ -58,33 +60,17 @@ function createPlayer (opt) {
     quality: [
       {
         name: '1080',
-        url: 'https://video-dev.github.io/streams/x36xhzz/url_8/193039199_mp4_h264_aac_fhd_7.m3u8'
-        // url: 'https://s3.cn-north-1.amazonaws.com.cn/wlmedia/qa/live/WeLive-DEV_39070_1418_306254_sd/vod/play_1553577829258.m3u8'
-        // url: 'http://10.0.2.63/m3u8/live_rel_WeLive-DEV_39070_1397_305444_fhd.m3u8'
-        // url: 'https://s3.cn-north-1.amazonaws.com.cn/wlmedia/qa/clips/20190313/WeLive-DEV_35820_280_305612/20190313_10_52_28_WeLive-DEV_35820_280_305612_d77975760024425ca5ffbd275c0248a9_pre.mp4'
-        // url: 'https://s3.cn-north-1.amazonaws.com.cn/wlmedia/qa/clips/20180926/WeLive-DEV_35790_382_301312/20180926_13_12_14_WeLive-DEV_35790_382_301312_4df5ba0c1ead4b81b71eb83e56620dde_pre.mp4'
+        url: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8'
       },
       {
         name: '720',
         url: 'https://video-dev.github.io/streams/x36xhzz/url_0/193039199_mp4_h264_aac_hd_7.m3u8'
-      },
-      {
-        name: '480',
-        url: 'https://video-dev.github.io/streams/x36xhzz/url_6/193039199_mp4_h264_aac_hq_7.m3u8'
-      },
-      {
-        name: '380',
-        url: 'https://video-dev.github.io/streams/x36xhzz/url_4/193039199_mp4_h264_aac_7.m3u8'
-      },
-      {
-        name: '240',
-        url: 'https://video-dev.github.io/streams/x36xhzz/url_2/193039199_mp4_h264_aac_ld_7.m3u8'
       }
     ],
     beforeQualityChange (index) {
       return window.confirm(`切换到清晰度${index}?`)
     },
-    cover: 'https://img1.igg.com/999/placard/2017/02/22/045323_2167.jpg',
+    cover: '',
     coverType: 'cover',
     contextMenu: {
       copyUrl: '',
@@ -122,8 +108,10 @@ function createPlayer (opt) {
     container.style.height = evt.detail.width * 9 / 16 + 'px'
   })
   player.on(OnePlayer.EVENTS.COMMENT, (evt) => {
-    player.toast('评论内容：' + evt.detail.content)
+    const content = evt.detail.content
+    player.toast('评论内容：' + content)
     player.clearComment()
+    player.appendDanMu([content], true)
   })
   player.on(VIDEO_EVENTS, (evt) => {
     if (evt.type === 'timeupdate') {
@@ -141,8 +129,7 @@ player.on(OnePlayer.EVENTS.LOAD, () => {
 })
 
 player.load(0)
-// player.load('https://s3.cn-north-1.amazonaws.com.cn/wlmedia/qa/live/WeLive-DEV_35790_399_301384/vod/play_1538113523421.m3u8')
-// player.load('https://dhi9hq3pw4iz.cloudfront.net/m3u8/live_ssl_WeLive-Ext-OL_11534775_63_411567.m3u8')
+autoSendRandomDanMu()
 
 document.querySelector('#version').textContent = OnePlayer.VERSION
 document.querySelector('#hls-version').textContent = Hls.version
@@ -228,9 +215,7 @@ document.querySelector('#dan-mu-xss').addEventListener('click', function () {
 `, true)
 })
 document.querySelector('#dan-mu-auto-button').addEventListener('click', function () {
-  setInterval(function () {
-    sendDanMu(createMutipleRandomDanmu(10))
-  }, 1000)
+  autoSendRandomDanMu()
 })
 document.querySelector('#dan-mu-multiple-button').addEventListener('click', function () {
   sendDanMu([
@@ -246,6 +231,14 @@ document.querySelector('#dan-mu-multiple-button').addEventListener('click', func
     `<div style="color: ${createRandomColor()}">${createRandomString()}</div>`
   ])
 })
+function autoSendRandomDanMu () {
+  if (autoSendRandomDanMuId) {
+    window.clearInterval(autoSendRandomDanMuId)
+  }
+  autoSendRandomDanMuId = setInterval(function () {
+    sendDanMu(createMutipleRandomDanmu(10))
+  }, 1000)
+}
 
 function createMutipleRandomDanmu (count) {
   let list = []

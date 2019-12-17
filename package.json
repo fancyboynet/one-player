@@ -1,6 +1,6 @@
 {
   "name": "one-player",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "module": "src/index.js",
@@ -11,11 +11,20 @@
     "build": "rubik build --lib",
     "start": "rubik serve --lib",
     "lint": "rubik lint --fix",
-    "stylelint": "rubik stylelint --fix"
+    "stylelint": "rubik stylelint --fix",
+    "test": "yarn lint",
+    "release": "yarn test && standard-version"
   },
   "keywords": [],
   "author": "Fancy <fancyboynet@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fancyboynet/one-player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fancyboynet/one-player/issues"
+  },
   "devDependencies": {
     "art-template-loader": "^1.4.3",
     "hls.js": "^0.13.0",

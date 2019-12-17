@@ -1,14 +1,15 @@
-# iggfe-player
+# one-player
 基于hls的播放器
 
-## Install latest
-```bash
-$ npm i git+ssh://git@10.0.2.121:IGGFE/iggfe-player.git
-```
+<h1 align="center"> one-player </h1>
+<p align="center">
+  <b>一款基于hls.js的h5播放器</b> <a href="https://www.npmjs.com/package/one-player"><img alt="npm" src="https://img.shields.io/npm/v/one-player?color=sucess"></a>
+</p>
 
-## Install stable with tag version
+
+## Install
 ```bash
-$ npm i git+ssh://git@10.0.2.121:IGGFE/iggfe-player.git#v0.5.0
+$ yarn add one-player
 ```
 
 ## Usage
@@ -55,7 +56,7 @@ player.on('pause', () => {
 完整查看[src/js/events.js](src/js/config.js)
 
 ## Events
-事件监听方式都是一样的, 返回的evt是一个标准的[CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent)对象
+事件监听返回的evt是一个标准的[CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent)对象
 ```
 player.on(OnePlayer.EVENTS.VOLUME_CHANGE, (evt) => {
   console.log(evt, evt.detail)
@@ -89,8 +90,7 @@ player.destroy()
 ## Plugin
 ### write
 ```javascript
-import './player-add-report.css'
-import OnePlayer from '../src/index'
+import OnePlayer from 'one-player'
 export default class Report extends OnePlayer.Plugin {
   constructor (player, opt = {}) {
     super(player)
@@ -101,7 +101,7 @@ export default class Report extends OnePlayer.Plugin {
     let container = this.player.template.controlBar.querySelector('.one-player--control-right')
     let item = document.createElement('div')
     item.classList.add('one-player--control-item', 'player-add-report')
-    item.innerHTML = `<button>${this.opt.text}</button>`
+    item.innerHTML = `<button type="button">${this.opt.text}</button>`
     item.addEventListener('click', () => {
       window.alert('Reported!')
     })
@@ -111,7 +111,7 @@ export default class Report extends OnePlayer.Plugin {
 ```
 ### use
 ```javascript
-import Report from './player-add-report'
+import Report from 'player-add-report'
 OnePlayer.use(Report, {
   text: 'Report'
 })
