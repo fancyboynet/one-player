@@ -46,11 +46,11 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,vue}": [
-      "rubik lint --fix",
+      "yarn run lint",
       "git add"
     ],
     "src/**/*.{css,scss,sass,less,vue}": [
-      "rubik stylelint --fix",
+      "yarn run stylelint",
       "git add"
     ]
   },
