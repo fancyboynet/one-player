@@ -1,6 +1,3 @@
-# one-player
-基于hls的播放器
-
 <h1 align="center"> one-player </h1>
 <p align="center">
   <b>一款基于hls.js的h5播放器</b> <a href="https://www.npmjs.com/package/one-player"><img alt="npm" src="https://img.shields.io/npm/v/one-player?color=sucess"></a>
