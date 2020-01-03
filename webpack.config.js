@@ -28,7 +28,8 @@ const plugins = (isDevMode || isBuildDemo) ? [
 module.exports = {
   output: {
     library: "OnePlayer",
-    path: isBuildDemo ? path.resolve('./demo-build') : undefined
+    path: isBuildDemo ? path.resolve('./demo-build') : undefined,
+    publicPath: isBuildDemo ? '' : undefined
   },
   entry,
   module: {
