@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "rubik build --lib",
+    "build:demo": "cross-env BUILD_DEMO=true rubik build --lib",
     "start": "rubik serve --lib",
     "lint": "rubik lint --fix",
     "stylelint": "rubik stylelint --fix",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "art-template-loader": "^1.4.3",
+    "cross-env": "^6.0.3",
     "hls.js": "^0.13.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",

@@ -3,12 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const pkgJson = require('./package')
 const isDevMode = process.env.NODE_ENV !== 'production'
-const entry = isDevMode ? {
+const isBuildDemo = !!process.env.BUILD_DEMO
+
+const entry = (isDevMode || isBuildDemo) ? {
   'demo': './demo/index.js',
   'performance': './demo/performance.js',
   'plugin': './demo/plugin.js'
 } : {}
-const plugins = isDevMode ? [
+const plugins = (isDevMode || isBuildDemo) ? [
   new HtmlWebpackPlugin({
     template: path.resolve(__dirname, 'demo/index.html'),
     chunks: ['demo']
@@ -25,7 +27,8 @@ const plugins = isDevMode ? [
   })] : []
 module.exports = {
   output: {
-    library: "OnePlayer"
+    library: "OnePlayer",
+    path: isBuildDemo ? path.resolve('./demo-build') : undefined
   },
   entry,
   module: {
