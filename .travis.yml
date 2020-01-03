@@ -4,8 +4,8 @@ node_js:
 script:
 - yarn run build:demo
 deploy:
-  provider: pages
-  cleanup: false
+  provider: pages:git
+  cleanup: true
   local_dir: demo-build
   token:
     secure: cw+HyPy++yhKJHI91DCwAQxn2NZWGBVjrCGg4Jk9bvQUxgYZT03AMaBMx40qqFyQKQqo+dGXLfsr8/msnfDXbKYZHRIUrTxvAtjAReE6DKGb6yd1r1Hl1zxn6PtTIkE3YD2IjTDCNLyCTQ1Akg/0RGEYWTTjA91BtMzJ28uvtO8fMwf1JzI3g85Ogg5zvWXJX8og9H6yeQnXCuEyhmbS/uvF9z9mXejsIYh3cg2YKthvshmmbWyexesIZMtIQt9yDbPCjGs/4Nw36BKE1+FiEiZ66tMA1zK4wPziIwkxD1yrqvi3j+pnIkJykHZ0Y2zSpH5ppJZ1LLcqNoLTZSxeBdu3Pcvd6dRf0qk0WUt71mdcTRHr6T80Q1UmhOVUopBg2TnpRgOPV3jE3kfSjCI2CqnszYAGLGhV6NdKoSBCGVdogeK4NG9SwL2dav/xL/VYEMxolVRJAsbmg3pEsUdMpiL5C3ATYrAQZzpoVlnKQOgxiZmtefoZ/n8f3hixCZA21o3WUh74CyHNDbXgj9iQlBUmDIwE6hXEKRWLE9bovprVksllhurY3KWDAZW1xkFYoLiV8jZeG4TOW1NHbTJ9m3DO1asfQ6RdnDr0I9NsK6yfydtcd/SeK+j7PWVpn7RDlX/aEk8OsMR5+xSSSY/cnUZFaEjjDFs79RubPM/zyTE=
