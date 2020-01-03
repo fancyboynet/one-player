@@ -7,7 +7,7 @@ deploy:
   provider: pages
   cleanup: true
   local_dir: demo-build
-  github_token:
+  token:
     secure: KS81wvl0YW18gZfNfRtGpjJsbQjduxdcr4NeORUSAq+pEAGmCCG2JZu4iBaC+WwEhOtb4C2/YG9uJAdMho6A1Ba3nDkAw/eJFSbBee7CmKVFob5INh+zH/lvSepNkV0qymcgGJ8x//fa1tPvP7u1jibS5UyyC3CAeTtRW1pXZWRhl7O3alkvw7fhUeocR7vRj4uPW1h6C5L9R4oJz17ATPEewMuYZeXYVf7oA7VWgwKgBHjN5/vzAG6Klew7gzpDjXWxjw1nnXYsPT2E6HF6F9mQdkB6yuPTdxg2+cR47OO2IhI98AxXSOr1CH0OodFt8Sx67x91hH81lUAcwsZeFGCebuRF1XOm45AliAaZZDoHDdJ1MmBnPAOxX1d88pe7sdCJe9ntYWzsP2cEHTtxzk6j8sb5co1tw6K5ZLDaXPFXTAWtTDCXEeuysz8o/l+8qoMryATAvFAqaN32XeL8EQdqnE8mvc50B2CqKFVrobLhrluKHQabDPMRiDFyGtHdBdOK9l8XlwwvJNPkEDPYfdWV+YgbxYUMSRiYRXj/2RpIBe4U4mYXm08alpjuuPN134d2fuu5X1Wbu+KGYH5t4dbs4/z4m/N/Dnwb6hqdca+6F9w7DE+edF6cK7xuggq8TlPj2lPezz/NYgNfk11gaA0faeVCcLF2t1BGyDF+SIM=
   keep_history: true
   on:
